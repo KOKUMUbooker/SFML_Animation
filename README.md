@@ -23,7 +23,3 @@ To run it, execute the `animation` file:
 2. **The Pacman Red Ghost Character**
 
    ![Pacman Red Ghost Preview](./readme_assets/red_ghost.gif)
-
-```
-
-```
