@@ -8,23 +8,23 @@ int main (){
     sf::RenderWindow window(sf::VideoMode(500, 400), "Animation");
 
     // //=================== For pacman sprite =================
-    sf::Texture texture;
-    texture.loadFromFile("./spritesheets/red_ghost.png");
+    // sf::Texture texture;
+    // texture.loadFromFile("./spritesheets/red_ghost.png");
 
-    sf::IntRect rectSourceSprite(0,0,24,24);  // width = 24 , height = 24  
-    sf::Sprite sprite(texture,rectSourceSprite);
-    sprite.setScale(5.0f,5.0f);
-    sprite.setPosition(200.0f,150.0f);
+    // sf::IntRect rectSourceSprite(0,0,24,24);  // width = 24 , height = 24  
+    // sf::Sprite sprite(texture,rectSourceSprite);
+    // sprite.setScale(5.0f,5.0f);
+    // sprite.setPosition(200.0f,150.0f);
     // // ======================================================
 
     // ============= For game swordsman character sprite =================
-    // sf::Texture texture;
-    // texture.loadFromFile("./spritesheets/game_character.png");
+    sf::Texture texture;
+    texture.loadFromFile("./spritesheets/game_character.png");
 
-    // sf::IntRect rectSourceSprite(0,150,50,40);  // width = 50 , height = 40
-    // sf::Sprite sprite(texture,rectSourceSprite);
-    // sprite.setScale(5.0f,5.0f);
-    // sprite.setPosition(125.0f,125.0f);
+    sf::IntRect rectSourceSprite(0,150,50,40);  // width = 50 , height = 40
+    sf::Sprite sprite(texture,rectSourceSprite);
+    sprite.setScale(5.0f,5.0f);
+    sprite.setPosition(125.0f,125.0f);
     // ======================================================
 
     sf::Event event;
@@ -32,10 +32,10 @@ int main (){
 
     // 264 - for pacman sprite
     // 450 - for the game swordsman character
-    int last_frame_location{PACMAN_GAME_CHARACTER_LAST_FRAME_LOCATION};
+    int last_frame_location{SWORDSMAN_LAST_FRAME_LOCATION};
     // 24 - for pacman sprite
     // 50 - for the game swordsman character
-    int frame_width{PACMAN_GAME_CHARACTER_WIDTH};
+    int frame_width{SWORDSMAN_CHARACTER_WIDTH};
 
     while (window.isOpen())
     {
@@ -47,6 +47,7 @@ int main (){
             }
         }
 
+        // After a specified duration we change the sprite section currently in view
         if(clock.getElapsedTime().asSeconds() > 0.1f)
         {
              if(rectSourceSprite.left == last_frame_location)
